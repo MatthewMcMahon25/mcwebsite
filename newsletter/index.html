@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The McLetter – Newsletter Archive</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: sans-serif;
+      padding: 4rem 2rem;
+    }
+    h1 {
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      border: 1px solid #eee;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: scale(1.01);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .read-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+    }
+    hr {
+      margin: 1rem 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+    small {
+      color: #666;
+    }
+  </style>
+  <link rel="icon" href="../assets/Matthew McMahon Favicon.png" type="image/png"/>
+</head>
+<body>
+  <h1>The McLetter</h1>
+
+  <!-- ✅ Book Card Wrapper -->
+  <div style="max-width: 1200px; margin: 0 auto 3rem auto;">
+    <div class="card">
+      <a href="/book/">
+          <img src="../assets/The Matthew McMahon Book Cover.png" alt="The Matthew McMahon Book Cover" style="max-width: 1032px; width: 100%;" />
+      </a>
+      <h4>The Matthew McMahon Book</h4>
+      <p>A system to help individuals master the game of life.</p>
+      <a href="/book/" class="read-link">Read The Book →</a>
+      <hr>
+      <small>By Matthew McMahon</small>
+    </div>
+  </div>
+
+  <!-- ✅ Newsletter Grid -->
+  <div id="card-grid" class="card-grid"></div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
