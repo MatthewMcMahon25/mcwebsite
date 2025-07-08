@@ -9,8 +9,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Paths
-const postsDirectory = path.join(__dirname, '../newsletter/posts');
-const outputPath = path.join(__dirname, '../newsletter/posts.json');
+const postsDirectory = path.join(__dirname, '../posts');
+const outputPath = path.join(__dirname, '../posts.json');
 
 // Parse a single Markdown file into post object
 async function parseMarkdownFile(filePath) {
