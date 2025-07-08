@@ -5,10 +5,11 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
+        main: resolve(__dirname, 'index.html'), 
         newsletter: resolve(__dirname, 'newsletter/index.html'),
-        subscribe: resolve(__dirname, 'newsletter/subscribe.html'),
         post: resolve(__dirname, 'newsletter/post.html'),
+        subscribe: resolve(__dirname, 'newsletter/subscribe.html'),
+        book: resolve(__dirname, 'book/index.html'),
       },
     },
   },
