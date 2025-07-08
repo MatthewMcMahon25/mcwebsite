@@ -2,7 +2,7 @@
 title: "Reversing Your Potential As A Man"
 date: "2023-11-11"
 excerpt: "Masculine traits like accountability, ownership and purpose have gone down the tube in today’s modern society."
-image: "/assets/blog photos/Reversing Your Potential As A Man.png"
+image: "/assets/blog-photos/reversing.png"
 ---
 
 # Setting

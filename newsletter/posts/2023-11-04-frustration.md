@@ -2,7 +2,7 @@
 title: "The Frustration of Frustration"
 date: "2023-11-04"
 excerpt: "The road to where you want to be and where you are now may be paved with frustration."
-image: "/assets/blog photos/The Frustration of Frustration Image.png"
+image: "/assets/blog-photos/frustration.png"
 ---
 
 # Setting
