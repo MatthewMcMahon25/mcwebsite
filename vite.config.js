@@ -13,5 +13,5 @@ export default defineConfig({
       },
     },
   },
-  publicDir: 'newsletter', // 👈 Tells Vite to copy everything from /newsletter/ directly into dist/
+  publicDir: 'public', // 👈 Tells Vite to copy everything from /newsletter/ directly into dist/
 });
