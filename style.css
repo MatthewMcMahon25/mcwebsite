@@ -427,3 +427,86 @@ main, .post-page {
   font-size: 0.9rem;
   color: #777;
 }
+
+/* ========== Book Homepage ========== */
+/* ========== Book Homepage ========== */
+.book-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.book-left {
+  flex: 1;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  position: sticky;
+  top: 6rem; /* Adjust based on your header height */
+  align-self: flex-start;
+  padding-bottom: 2rem;
+}
+
+.book-left hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 1rem 0;
+}
+
+.book-right {
+  flex: 2;
+  min-width: 0;
+}
+
+/* Gold CTA Buttons */
+.book-left .cta-button {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: #DDBA65;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.book-left .cta-button:hover {
+  background: #c4a451;
+  cursor: pointer;
+}
+
+/* Chapter Rows */
+.chapter-row {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 6px;
+  text-decoration: none;
+  color: black;
+  transition: background 0.2s ease;
+  border: 1px solid #ddd;
+}
+
+.chapter-row:hover {
+  background: #eaeaea;
+  cursor: pointer;
+}
+
+.chapter-arrow {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+}
+
+.chapter-title {
+  font-weight: bold;
+  font-size: 1.05rem;
+}

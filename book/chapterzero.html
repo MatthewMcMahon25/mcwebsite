@@ -1,38 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chapter Zero - The Matthew McMahon Book</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="/">← Home</a> |
-        <a href="/book">Back to Book</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Matthew McMahon Book – Year 0</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="../assets/Matthew McMahon Favicon.png" type="image/png"/>
+  <style>
+    .chapter-container {
+      max-width: 700px;
+      margin: 5rem auto;
+      padding: 0 1.5rem;
+      font-family: sans-serif;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      margin-top: 2rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #DDBA65;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      color: #333;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+    }
+
+    .nav-links a {
+      text-decoration: underline;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-container">
+      <a href="/" class="logo">
+        <img src="/assets/logo-black.png" alt="Matthew McMahon Logo" />
+      </a>
+      <nav class="main-nav">
+        <a href="/newsletter/subscribe.html">The McLetter</a>
+        <a href="/book/">The Matthew McMahon Book</a>
+        <a href="#software">The Software</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main class="chapter">
-      <h1>Chapter Zero</h1>
-      <p><em>Born: Day One</em></p>
-    
-      <section class="chapter-content">
-        <p>
-          My name’s Matt McMahon, and I’m Iron Man. At least, that’s what I told my psychiatrist...
-        </p>
+  <main class="chapter-container">
+    <h1>Year 0</h1>
+    <h2>The Beginning Before the Beginning</h2>
+    <hr />
 
-        <p>
-          The journey started before I could even form sentences. I was observant. I was imaginative. I was absorbing everything...
-        </p>
+    <p><em>This is where the opening scene goes — what was happening, what you felt, or the origin moment of the chapter’s core story.</em></p>
 
-        <!-- Add more paragrpahs here -->
-      </section>
-    
-      <footer class="chapter-footer">
-        <a href="/book/chapterone.html">Next → Chapter One</a>
-      </footer>
-    </main>  
-  </body>
+    <h3>Conflict</h3>
+    <p>The tension, confusion, or decision that had to be made. Show the reader where you were mentally, emotionally, or physically.</p>
+
+    <h3>Shift</h3>
+    <p>What changed? A moment of clarity? A decision? A setback? This is where transformation starts to take shape.</p>
+
+    <h3>Lesson</h3>
+    <p>Wrap up with the takeaway, the meaning behind the story, and what it taught you. Aim for a strong finish that connects to the theme of self-mastery, purpose, or identity.</p>
+
+    <div class="nav-links">
+      <a href="/book/">← Back to Book</a>
+      <a href="/book/chapterone.html">Next Chapter →</a>
+    </div>
+  </main>
+
+</body>
 </html>
