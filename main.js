@@ -10,7 +10,7 @@ function renderMarkdown(text) {
 }
 
 // Fetch posts.json
-fetch('/posts.json')
+fetch('/newsletter/posts.json')
   .then(res => res.json())
   .then(posts => {
     // === SINGLE POST PAGE ===
