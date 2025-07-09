@@ -1,4 +1,4 @@
-import { marked } from 'marked';
+import { marked } from 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
 
 // Detect if we’re on a post page or the homepage
 const params = new URLSearchParams(window.location.search);
