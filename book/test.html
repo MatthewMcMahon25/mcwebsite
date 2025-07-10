@@ -9,20 +9,20 @@
 <body class="bg-white text-gray-900 font-sans">
 
   <!-- Header -->
-  <header class="site-header" id="site-header"></header>
-    <script>
-      fetch('/header.html')
-        .then(res => res.text())
-        .then(data => {
-          document.getElementById('site-header').innerHTML = data;
-        });
-    </script>
+  <header class="fixed top-0 left-0 right-0 z-50" id="site-header"></header>
+  <script>
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('site-header').innerHTML = data;
+      });
+  </script>
 
   <!-- Main Layout -->
-  <div class="flex pt-20 max-w-7xl mx-auto px-4">
+  <div class="flex max-w-7xl mx-auto px-4 pt-24 gap-12">
 
-    <!-- Left Column -->
-    <aside class="w-1/4 sticky top-20 hidden lg:block">
+    <!-- Left Sidebar -->
+    <aside class="w-1/4 hidden lg:block self-start sticky top-24">
       <div class="flex flex-col items-center space-y-4">
         <img src="/public/assets/The Matthew McMahon Book Cover.jpg" alt="Book Cover" class="w-48 shadow-md border border-gray-300">
         <a href="https://www.youtube.com/@JustMattMc" class="text-sm text-blue-600 font-semibold hover:underline">Watch on YouTube</a>
@@ -31,10 +31,10 @@
       </div>
     </aside>
 
-    <!-- Right Column -->
+    <!-- Right Content -->
     <main class="flex-1 space-y-12">
 
-      <!-- Description -->
+      <!-- Book Description -->
       <section>
         <h1 class="text-3xl font-bold mb-2">Matthew McMahon</h1>
         <p class="text-lg text-gray-700">
@@ -45,68 +45,68 @@
       <!-- Year Sections -->
       <section>
         <h2 class="text-xl font-semibold border-b pb-1 mb-4">Year Zero – Year Five</h2>
-        <div class="flex flex-col gap-4">
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Zero</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year One</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Two</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Three</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Four</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Five</a>
+        <div class="flex flex-col divide-y divide-gray-200 border rounded-xl overflow-hidden">
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Zero</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year One</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Two</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Three</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Four</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Five</a>
         </div>
       </section>
 
       <section>
         <h2 class="text-xl font-semibold border-b pb-1 mb-4">Year Six – Year Ten</h2>
-        <div class="flex flex-col gap-4">
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Six</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Seven</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Eight</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Nine</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Ten</a>
+        <div class="flex flex-col divide-y divide-gray-200 border rounded-xl overflow-hidden">
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Six</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Seven</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Eight</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Nine</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Ten</a>
         </div>
       </section>
 
       <section>
         <h2 class="text-xl font-semibold border-b pb-1 mb-4">Year Eleven – Year Fifteen</h2>
-        <div class="flex flex-col gap-4">
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Eleven</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twelve</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Thirteen</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Fourteen</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Fifteen</a>
+        <div class="flex flex-col divide-y divide-gray-200 border rounded-xl overflow-hidden">
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Eleven</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Twelve</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Thirteen</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Fourteen</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Fifteen</a>
         </div>
       </section>
 
       <section>
         <h2 class="text-xl font-semibold border-b pb-1 mb-4">Year Sixteen – Year Twenty</h2>
-        <div class="flex flex-col gap-4">
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Sixteen</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Seventeen</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Eighteen</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Nineteen</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twenty</a>
+        <div class="flex flex-col divide-y divide-gray-200 border rounded-xl overflow-hidden">
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Sixteen</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Seventeen</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Eighteen</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Nineteen</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Twenty</a>
         </div>
       </section>
 
       <section>
         <h2 class="text-xl font-semibold border-b pb-1 mb-4">Year Twenty-One – Year Twenty-Five</h2>
-        <div class="flex flex-col gap-4">
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twenty-One</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twenty-Two</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twenty-Three</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twenty-Four</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twenty-Five</a>
+        <div class="flex flex-col divide-y divide-gray-200 border rounded-xl overflow-hidden">
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Twenty-One</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Twenty-Two</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Twenty-Three</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Twenty-Four</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Year Twenty-Five</a>
         </div>
       </section>
 
       <!-- Appendix -->
       <section>
         <h2 class="text-xl font-semibold border-b pb-1 mb-4">Appendix</h2>
-        <div class="flex flex-col gap-4">
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Diet</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Fitness</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Routine</a>
-          <a href="#" class="p-4 border rounded-xl hover:shadow">Digital Media</a>
+        <div class="flex flex-col divide-y divide-gray-200 border rounded-xl overflow-hidden">
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Diet</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Fitness</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Routine</a>
+          <a href="#" class="p-4 hover:bg-gray-50 transition">Digital Media</a>
         </div>
       </section>
 
