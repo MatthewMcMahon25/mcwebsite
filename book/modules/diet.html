@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Matthew McMahon Book – Diet Module</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+  <style>
+    .chapter-container {
+      max-width: 700px;
+      margin: 5rem auto;
+      padding: 0 1.5rem;
+      font-family: sans-serif;
+      line-height: 1.7;
+    }
+    h1, h2, h3 {
+      margin-top: 2rem;
+    }
+    h1 {
+      font-size: 2.25rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      color: #DDBA65;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    li {
+      margin: 0.5rem 0;
+    }
+    .meal {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f9f9f9;
+      border-left: 4px solid #DDBA65;
+    }
+  </style>
+</head>
+<body>
+    <header class="site-header" id="site-header"></header>
+    <script>
+      fetch('/header.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('site-header').innerHTML = data;
+        });
+    </script>
+
+  <main class="chapter-container">
+    <h1>Diet Module</h1>
+    <h2>Grocery List (Organized)</h2>
+
+    <h3>Fruits</h3>
+    <ul>
+      <li>Strawberries</li>
+      <li>Blueberries</li>
+      <li>Red Grapes</li>
+      <li>Kiwis</li>
+      <li>Apples</li>
+      <li>Avocados</li>
+      <li>Bananas</li>
+    </ul>
+
+    <h3>Vegetables</h3>
+    <ul>
+      <li>Baby Carrots</li>
+      <li>Kale</li>
+      <li>Broccoli</li>
+      <li>Potatoes</li>
+      <li>Spinach (Baby)</li>
+      <li>Peas</li>
+    </ul>
+
+    <h3>Nuts & Seeds</h3>
+    <ul>
+      <li>Almonds</li>
+      <li>Brazil Nuts</li>
+      <li>Macadamia Nuts</li>
+      <li>Sunflower Kernels</li>
+      <li>Chia Seeds</li>
+      <li>Peanut Butter</li>
+    </ul>
+
+    <h3>Pantry Items</h3>
+    <ul>
+      <li>Oatmeal</li>
+      <li>White Rice</li>
+      <li>Whole Wheat Bread</li>
+      <li>Almond Milk</li>
+      <li>Honey</li>
+      <li>Jelly</li>
+      <li>Coffee</li>
+    </ul>
+
+    <h3>Protein Sources</h3>
+    <ul>
+      <li>Bacon</li>
+      <li>Pork Roll</li>
+      <li>Italian Sausage</li>
+      <li>Thin Sliced Chicken</li>
+      <li>Ground Beef 80/20 or 90/10</li>
+      <li>Salmon</li>
+      <li>Eggs</li>
+      <li>Sabra Hummus (Classic)</li>
+      <li>Black Beans</li>
+    </ul>
+
+    <h3>Condiments</h3>
+    <ul>
+      <li>Mustard</li>
+      <li>Spicy Mustard</li>
+      <li>Ketchup</li>
+      <li>Thousand Island</li>
+      <li>Blue Cheese</li>
+      <li>Ranch</li>
+    </ul>
+
+    <h3>Fun Items (Optional)</h3>
+    <ul>
+      <li>Hot Dogs</li>
+      <li>Hamburgers</li>
+      <li>Ice Cream</li>
+      <li>Soda</li>
+      <li>Donuts</li>
+      <li>Vanilla Sweet Cream Cold Brew</li>
+    </ul>
+
+    <h2>Example Meals + Macros</h2>
+
+    <div class="meal">
+      <h3>Traditional Breakfast</h3>
+      <p><strong>3 Eggs, 2 slices Bacon, 1/2 cup Oatmeal (with honey)</strong></p>
+      <p>Protein: ~25g | Carbs: ~30g | Fat: ~30g | Calories: ~550</p>
+    </div>
+
+    <div class="meal">
+      <h3>Chipotle-Style Bowl</h3>
+      <p><strong>6 oz Chicken, 1 cup White Rice, 1/4 cup Black Beans, 1/4 Avocado</strong></p>
+      <p>Protein: ~45g | Carbs: ~50g | Fat: ~15g | Calories: ~650</p>
+    </div>
+
+    <div class="meal">
+      <h3>Yogurt Power Bowl</h3>
+      <p><strong>Oikos Yogurt, Strawberries, Chia Seeds, Honey</strong></p>
+      <p>Protein: ~20g | Carbs: ~30g | Fat: ~6g | Calories: ~320</p>
+    </div>
+
+    <div class="meal">
+      <h3>Power Salad</h3>
+      <p><strong>Spinach + Kale, 6 oz Salmon, Almonds, Olive Oil</strong></p>
+      <p>Protein: ~35g | Carbs: ~10g | Fat: ~25g | Calories: ~500</p>
+    </div>
+
+    <div class="meal">
+      <h3>Burger + Ice Cream (Fun Meal)</h3>
+      <p><strong>Ground Beef Patty, Whole Wheat Bun, Scoop Ice Cream</strong></p>
+      <p>Protein: ~30g | Carbs: ~45g | Fat: ~30g | Calories: ~750</p>
+    </div>
+  </main>
+</body>
+</html>
