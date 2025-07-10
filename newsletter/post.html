@@ -9,18 +9,15 @@
   <script type="module" src="/main.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-container">
-      <a href="/" class="logo">
-        <img src="/assets/Logo Black.png" alt="Matthew McMahon Logo" />
-      </a>
-      <nav class="main-nav">
-        <a href="/newsletter/">The McLetter</a>
-        <a href="/book/">The McBook</a>
-        <a href="/#software">The Software</a>
-      </nav>
-    </div>
-  </header>
+  <header class="site-header" id="site-header"></header>
+  <script>
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('site-header').innerHTML = data;
+      });
+  </script>
+
 
 
   <main class="post-page" style="max-width: 700px; margin: 0 auto; padding: 2rem;">

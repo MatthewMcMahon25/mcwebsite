@@ -8,18 +8,14 @@
   <link rel="icon" href="/assets/favicon.png" type="image/png" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-container">
-      <a href="/" class="logo">
-        <img src="/assets/logo-black.png" alt="Matthew McMahon Logo" />
-      </a>
-      <nav class="main-nav">
-        <a href="/newsletter/subscribe.html">The McLetter</a>
-        <a href="/book/">The McBook</a>
-        <a href="/software/">The Software</a>
-      </nav>
-    </div>
-  </header>
+  <header class="site-header" id="site-header"></header>
+  <script>
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('site-header').innerHTML = data;
+      });
+  </script>
 
   <main class="software-section" style="padding: 4rem 1.5rem; max-width: 800px; margin: auto; text-align: center;">
     <h1>The Software</h1>
