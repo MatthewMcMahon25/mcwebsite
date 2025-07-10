@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Book Title</title>
+  <title>Matthew McMahon</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-white text-gray-900 font-sans">
 
   <!-- Header -->
-  <header class="w-full h-16 flex items-center justify-between px-6 border-b border-gray-300 fixed top-0 left-0 bg-white z-50">
-    <a href="/" class="text-xl font-bold">← Back to Site</a>
-    <a href="/book" class="text-sm font-semibold hover:underline">Chapter Index</a>
-  </header>
+  <header class="site-header" id="site-header"></header>
+    <script>
+      fetch('/header.html')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('site-header').innerHTML = data;
+        });
+    </script>
 
   <!-- Main Layout -->
   <div class="flex pt-20 max-w-7xl mx-auto px-4">
@@ -20,43 +24,92 @@
     <!-- Left Column -->
     <aside class="w-1/4 sticky top-20 hidden lg:block">
       <div class="flex flex-col items-center space-y-4">
-        <img src="/public/assets/book-cover.jpg" alt="Book Cover" class="w-48 shadow-md border border-gray-300">
+        <img src="/public/assets/The Matthew McMahon Book Cover.jpg" alt="Book Cover" class="w-48 shadow-md border border-gray-300">
         <a href="https://www.youtube.com/@JustMattMc" class="text-sm text-blue-600 font-semibold hover:underline">Watch on YouTube</a>
         <a href="/letters" class="text-sm text-blue-600 font-semibold hover:underline">Join The McLetter</a>
-        <a href="#" class="text-sm text-blue-600 font-semibold hover:underline">Back The Walk</a>
+        <a href="#" class="text-sm text-blue-600 font-semibold hover:underline">Fund The Walk</a>
       </div>
     </aside>
 
     <!-- Right Column -->
     <main class="flex-1 space-y-12">
-      <!-- Book Description -->
+
+      <!-- Description -->
       <section>
-        <h1 class="text-3xl font-bold mb-2">The Book of Becoming</h1>
+        <h1 class="text-3xl font-bold mb-2">Matthew McMahon</h1>
         <p class="text-lg text-gray-700">
-          A raw documentation of one man’s journey to become everything he was meant to be. 
-          These are the pages, the pivots, the pushbacks — told year by year.
+          A raw documentation of one man’s journey to become everything he was meant to be — year by year, breakthrough by breakdown.
         </p>
       </section>
 
-      <!-- Chapters: Year Zero -->
+      <!-- Year Sections -->
       <section>
-        <h2 class="text-xl font-semibold border-b pb-1 mb-4">Year Zero</h2>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <a href="/book/year-zero/chapter-1" class="p-4 border rounded-xl hover:shadow transition">Chapter 1: The Awakening</a>
-          <a href="/book/year-zero/chapter-2" class="p-4 border rounded-xl hover:shadow transition">Chapter 2: The Break</a>
-          <!-- Add more here -->
+        <h2 class="text-xl font-semibold border-b pb-1 mb-4">Year Zero – Year Five</h2>
+        <div class="flex flex-col gap-4">
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Zero</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year One</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Two</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Three</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Four</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Five</a>
         </div>
       </section>
 
-      <!-- Chapters: Year One -->
       <section>
-        <h2 class="text-xl font-semibold border-b pb-1 mb-4">Year One</h2>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <a href="/book/year-one/chapter-1" class="p-4 border rounded-xl hover:shadow transition">Chapter 1: Becoming the Builder</a>
-          <a href="/book/year-one/chapter-2" class="p-4 border rounded-xl hover:shadow transition">Chapter 2: Blood, Sweat, Silence</a>
-          <!-- Add more here -->
+        <h2 class="text-xl font-semibold border-b pb-1 mb-4">Year Six – Year Ten</h2>
+        <div class="flex flex-col gap-4">
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Six</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Seven</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Eight</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Nine</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Ten</a>
         </div>
       </section>
+
+      <section>
+        <h2 class="text-xl font-semibold border-b pb-1 mb-4">Year Eleven – Year Fifteen</h2>
+        <div class="flex flex-col gap-4">
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Eleven</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twelve</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Thirteen</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Fourteen</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Fifteen</a>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold border-b pb-1 mb-4">Year Sixteen – Year Twenty</h2>
+        <div class="flex flex-col gap-4">
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Sixteen</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Seventeen</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Eighteen</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Nineteen</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twenty</a>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold border-b pb-1 mb-4">Year Twenty-One – Year Twenty-Five</h2>
+        <div class="flex flex-col gap-4">
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twenty-One</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twenty-Two</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twenty-Three</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twenty-Four</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Year Twenty-Five</a>
+        </div>
+      </section>
+
+      <!-- Appendix -->
+      <section>
+        <h2 class="text-xl font-semibold border-b pb-1 mb-4">Appendix</h2>
+        <div class="flex flex-col gap-4">
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Diet</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Fitness</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Routine</a>
+          <a href="#" class="p-4 border rounded-xl hover:shadow">Digital Media</a>
+        </div>
+      </section>
+
     </main>
   </div>
 
