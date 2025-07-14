@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 // Paths
 const postsDirectory = path.join(__dirname, '../posts');
-const outputPath = path.join(__dirname, '../../public/posts.json');
+const outputPath = path.join(__dirname, '../posts.json');
 
 // Parse a single Markdown file into post object
 async function parseMarkdownFile(filePath) {

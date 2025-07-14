@@ -1,0 +1,26 @@
+{
+  "name": "mcwebsite",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatthewMcMahon25/mcwebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatthewMcMahon25/mcwebsite/issues"
+  },
+  "homepage": "https://github.com/MatthewMcMahon25/mcwebsite#readme",
+  "description": "",
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "fs-extra": "^11.3.0",
+    "glob": "^11.0.3",
+    "gray-matter": "^4.0.3"
+  }
+}
