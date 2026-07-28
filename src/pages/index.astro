@@ -1,0 +1,199 @@
+---
+import Base from '../layouts/Base.astro';
+
+const work = [
+  {
+    cat: 'Writing · weekly',
+    title: 'The McLetter',
+    blurb: 'A weekly letter on sound money, self-mastery, and building a life you actually own.',
+    href: '/#mcletter',
+    status: 'Live',
+  },
+  {
+    cat: 'Book · nonfiction',
+    title: 'Project M',
+    blurb: 'How did broken money break everything else? A detective walks you through the crime scene of monetary history.',
+    href: '/writing',
+    status: 'In progress',
+  },
+  {
+    cat: 'Book · fiction',
+    title: 'The Novel',
+    blurb: "A kids' fantasy where sound money is the magic — plant the principles before the world teaches the opposite.",
+    href: '/writing',
+    status: 'Drafting',
+  },
+  {
+    cat: 'Software',
+    title: 'Polarity',
+    blurb: "One system to run your life. Your finances as a game you're winning — level up in the real world.",
+    href: '/building',
+    status: 'Building',
+  },
+  {
+    cat: 'Hardware',
+    title: 'The Aegis',
+    blurb: 'A sovereign smartwatch, built from scratch. A tool that answers to me, not to a platform.',
+    href: '/building',
+    status: 'Building',
+  },
+];
+---
+
+<Base>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Matthew McMahon</p>
+      <h1 class="hero-title">Own your money.<br />Own your tools.<br />Own your life.</h1>
+      <p class="hero-sub">
+        I write about sound money and the individual, and I build the tools to live it —
+        software, hardware, and a couple of books. Everything I'm working on lives here.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="/#mcletter">Read the McLetter</a>
+        <a class="btn btn-ghost" href="/#the-work">See what I'm building ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE WORK (the 2D map) ============ -->
+  <section class="work" id="the-work">
+    <div class="wrap">
+      <div class="divider" style="margin-bottom:2.5rem;">
+        <span class="dot"></span>
+        <span class="eyebrow">The Tower — what I'm building</span>
+        <span class="dot"></span>
+      </div>
+
+      <div class="node-grid">
+        {work.map((w) => (
+          <a class="node" href={w.href}>
+            <div class="node-top">
+              <span class="node-cat">{w.cat}</span>
+              <span class="node-status">{w.status}</span>
+            </div>
+            <h3 class="node-title">{w.title}</h3>
+            <p class="node-blurb">{w.blurb}</p>
+            <span class="node-arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE McLETTER ============ -->
+  <section class="mcletter" id="mcletter">
+    <div class="wrap mcletter-inner">
+      <p class="eyebrow">The McLetter</p>
+      <h2 class="mcletter-title">One letter a week. The thread that ties it all together.</h2>
+      <p class="mcletter-sub">
+        Self-mastery, sound money, and building something that's actually yours. No fluff, no filler —
+        the same thinking behind everything above.
+      </p>
+      <a class="btn btn-gold" href="https://matthewmcmahon.beehiiv.com/subscribe">Subscribe — it's free</a>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT TEASER ============ -->
+  <section class="about-teaser">
+    <div class="wrap about-inner">
+      <p class="eyebrow">About</p>
+      <p class="about-copy">
+        I'm Matt — college hooper, lifelong builder, and someone chasing a purposeful life on his own terms.
+        I pulled one thread on how money works and the whole story unraveled. Now I write it down and build
+        the tools to live differently.
+      </p>
+      <a class="about-link" href="/about">The longer story →</a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ---------- hero ---------- */
+  .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+  .hero-glow {
+    position: absolute; inset: -20% 0 auto 0; height: 620px; pointer-events: none;
+    background: radial-gradient(60% 70% at 50% 0%, var(--gold-glow), transparent 70%);
+  }
+  .hero-inner {
+    position: relative;
+    padding: clamp(5rem, 14vh, 9rem) 1.5rem clamp(4rem, 10vh, 6.5rem);
+    text-align: center;
+  }
+  .hero-title {
+    font-size: clamp(2.6rem, 8vw, 5.25rem);
+    margin: 1.1rem auto 0;
+    letter-spacing: -0.03em;
+  }
+  .hero-sub {
+    max-width: 34rem; margin: 1.75rem auto 0;
+    color: var(--ink-dim); font-size: 1.08rem;
+  }
+  .hero-cta { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; margin-top: 2.25rem; }
+
+  /* ---------- the work map ---------- */
+  .work { padding: clamp(4rem, 9vh, 6rem) 0; }
+  .node-grid {
+    display: grid; gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  .node {
+    position: relative;
+    display: flex; flex-direction: column;
+    padding: 1.6rem 1.6rem 2.8rem;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    overflow: hidden;
+  }
+  .node::before {
+    content: ''; position: absolute; inset: 0 0 auto 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0; transition: opacity 0.2s ease;
+  }
+  .node:hover {
+    transform: translateY(-4px);
+    border-color: var(--line-2);
+    background: var(--bg-3);
+  }
+  .node:hover::before { opacity: 1; }
+  .node:hover .node-arrow { color: var(--gold); transform: translateX(4px); }
+  .node-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .node-cat {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-faint);
+  }
+  .node-status {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.2rem 0.55rem; border: 1px solid var(--line-2); border-radius: 999px;
+  }
+  .node-title { font-size: 1.7rem; margin-top: 1rem; }
+  .node-blurb { margin-top: 0.6rem; color: var(--ink-dim); font-size: 0.98rem; }
+  .node-arrow {
+    position: absolute; left: 1.6rem; bottom: 1.4rem;
+    font-size: 1.2rem; color: var(--ink-faint);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  /* ---------- mcletter band ---------- */
+  .mcletter {
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    background:
+      radial-gradient(70% 120% at 50% 0%, var(--gold-glow), transparent 60%),
+      var(--bg-2);
+  }
+  .mcletter-inner { text-align: center; padding: clamp(4rem, 10vh, 6rem) 1.5rem; }
+  .mcletter-title { font-size: clamp(1.8rem, 4.5vw, 2.9rem); margin: 1rem auto 0; max-width: 24ch; }
+  .mcletter-sub { max-width: 34rem; margin: 1.3rem auto 2rem; color: var(--ink-dim); }
+
+  /* ---------- about teaser ---------- */
+  .about-teaser { padding: clamp(4rem, 9vh, 6rem) 0; }
+  .about-inner { max-width: var(--readw); }
+  .about-copy { font-family: var(--serif); font-size: clamp(1.3rem, 3vw, 1.7rem); line-height: 1.4; margin-top: 1rem; color: var(--ink); }
+  .about-link { display: inline-block; margin-top: 1.5rem; color: var(--gold); font-weight: 600; }
+  .about-link:hover { text-decoration: underline; }
+</style>

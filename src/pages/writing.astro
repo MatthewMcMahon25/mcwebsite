@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const letters = (await getCollection('letters', ({ data }) => !data.draft))
+  .sort((a, b) => (a.id < b.id ? 1 : -1));
+
+function niceDate(id: string) {
+  const d = new Date(id.slice(0, 10) + 'T00:00:00');
+  return isNaN(d.valueOf())
+    ? ''
+    : d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+---
+
+<Base title="Writing — Matthew McMahon" description="The McLetter — a weekly note on sound money, self-mastery, and building a life you own.">
+  <section class="wrap letters-index">
+    <p class="eyebrow">The McLetter</p>
+    <h1>The letters.</h1>
+    <p class="lede">
+      A weekly note on sound money, self-mastery, and building a life you actually own.
+      The whole archive lives here — newest up top.
+    </p>
+
+    <div class="letter-list">
+      {letters.map((l) => (
+        <a class="letter-row" href={`/writing/${l.id}`}>
+          <time class="letter-date">{niceDate(l.id)}</time>
+          <span class="letter-title">{l.data.title}</span>
+          {l.data.excerpt && <span class="letter-ex">{l.data.excerpt}</span>}
+        </a>
+      ))}
+    </div>
+
+    <p class="letters-cta">
+      Get the next one in your inbox —
+      <a href="https://matthewmcmahon.beehiiv.com/subscribe">subscribe to the McLetter</a>.
+    </p>
+
+    <div class="books-note">
+      <div class="divider" style="margin-bottom:1.75rem;"><span class="dot"></span><span class="eyebrow">Also writing</span><span class="dot"></span></div>
+      <p><b>Project M</b> — a nonfiction detective story: how broken money broke everything else, and what we build now that we can see it.</p>
+      <p><b>The Novel</b> — a kids' fantasy where sound money is the magic. Plant the seed before the world teaches the opposite.</p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .letters-index { max-width: 760px; padding-top: 4rem; padding-bottom: 5rem; }
+  .letters-index h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); margin-top: 0.75rem; }
+  .lede { margin-top: 1rem; color: var(--ink-dim); font-size: 1.1rem; max-width: 40rem; }
+
+  .letter-list { margin-top: 3rem; border-top: 1px solid var(--line); }
+  .letter-row {
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    gap: 0.35rem 1.5rem;
+    align-items: baseline;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--line);
+    transition: background 0.15s ease;
+  }
+  .letter-row:hover { background: color-mix(in srgb, var(--gold) 6%, transparent); }
+  .letter-row:hover .letter-title { color: var(--gold); }
+  .letter-date { font-size: 0.82rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; padding-top: 0.3rem; }
+  .letter-title { font-family: var(--serif); font-size: 1.35rem; font-weight: 600; line-height: 1.15; transition: color 0.15s ease; }
+  .letter-ex { grid-column: 2; color: var(--ink-dim); font-size: 0.98rem; }
+
+  .letters-cta { margin-top: 2.75rem; color: var(--ink-dim); }
+  .letters-cta a { color: var(--gold); font-weight: 600; }
+  .letters-cta a:hover { text-decoration: underline; }
+
+  .books-note { margin-top: 4rem; }
+  .books-note p { color: var(--ink-dim); margin-bottom: 0.9rem; }
+  .books-note b { color: var(--ink); font-family: var(--serif); font-weight: 600; }
+
+  @media (max-width: 560px) {
+    .letter-row { grid-template-columns: 1fr; gap: 0.3rem; }
+    .letter-ex { grid-column: 1; }
+  }
+</style>
