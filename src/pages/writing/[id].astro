@@ -1,0 +1,64 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const letters = await getCollection('letters', ({ data }) => !data.draft);
+  return letters.map((letter) => ({ params: { id: letter.id }, props: { letter } }));
+}
+
+const { letter } = Astro.props;
+const { Content } = await render(letter);
+
+function niceDate(id: string) {
+  const d = new Date(id.slice(0, 10) + 'T00:00:00');
+  return isNaN(d.valueOf())
+    ? ''
+    : d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<Base title={`${letter.data.title} — Matthew McMahon`} description={letter.data.excerpt}>
+  <article class="wrap letter">
+    <header class="letter-head">
+      <p class="eyebrow">The McLetter · {niceDate(letter.id)}</p>
+      <h1 class="letter-title">{letter.data.title}</h1>
+    </header>
+
+    <div class="letter-body">
+      <Content />
+    </div>
+
+    <p class="letter-back"><a href="/writing">← All letters</a></p>
+  </article>
+</Base>
+
+<style>
+  .letter { max-width: 680px; padding-top: 4rem; padding-bottom: 5rem; }
+  .letter-head { border-bottom: 1px solid var(--line); padding-bottom: 2rem; margin-bottom: 2.5rem; }
+  .letter-title { font-size: clamp(2rem, 5.5vw, 3.1rem); margin-top: 0.75rem; }
+
+  .letter-body { font-size: 1.12rem; line-height: 1.78; color: #d9d9dd; }
+  .letter-body :global(p) { margin: 0 0 1.4rem; }
+  /* the # Setting / Antagonist / Protagonist / Conclusion markers -> small gold section labels */
+  .letter-body :global(h1) {
+    font-family: var(--sans);
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); margin: 2.75rem 0 1rem;
+  }
+  .letter-body :global(h2) { font-family: var(--serif); font-size: 1.45rem; margin: 2.25rem 0 1rem; color: var(--ink); }
+  .letter-body :global(ul), .letter-body :global(ol) { margin: 0 0 1.4rem 1.3rem; }
+  .letter-body :global(li) { margin-bottom: 0.5rem; }
+  .letter-body :global(blockquote) {
+    margin: 1.75rem 0; padding: 0.4rem 0 0.4rem 1.5rem;
+    border-left: 2px solid var(--gold); color: var(--ink-dim); font-style: italic;
+  }
+  .letter-body :global(strong) { color: var(--ink); }
+  .letter-body :global(a) { color: var(--gold); text-decoration: underline; }
+  .letter-body :global(hr) { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+  .letter-body :global(img) { border-radius: 10px; margin: 1.5rem 0; }
+
+  .letter-back { margin-top: 3.5rem; }
+  .letter-back a { color: var(--gold); font-weight: 600; }
+  .letter-back a:hover { text-decoration: underline; }
+</style>
