@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Matthew McMahon</title>
+    <link rel="icon" href="/assets/favicon.png" type="image/png" />
+    <style>
+      :root { --ink:#1a1a1a; --paper:#f7f5f0; --gold:#cc8850; --muted:#8a8a8a; }
+      @media (prefers-color-scheme: dark) {
+        :root { --ink:#ededed; --paper:#141414; --muted:#9a9a9a; }
+      }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { height:100%; }
+      body {
+        background:var(--paper);
+        color:var(--ink);
+        font-family: Georgia, 'Times New Roman', serif;
+        display:flex; align-items:center; justify-content:center;
+        min-height:100vh; padding:2rem; text-align:center;
+      }
+      .wrap { max-width:34rem; }
+      .name { font-size:clamp(2rem, 6vw, 3.25rem); font-weight:600; letter-spacing:-0.01em; }
+      .rule { width:52px; height:2px; background:var(--gold); border:0; margin:1.75rem auto; }
+      .line { font-size:1.05rem; color:var(--muted); font-style:italic; line-height:1.65; }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1 class="name">Matthew McMahon</h1>
+      <hr class="rule" />
+      <p class="line">Building something worth your time. Back soon.</p>
+    </main>
+  </body>
+</html>
